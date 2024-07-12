@@ -46,8 +46,8 @@ const loginUser = async (req, res) => {
         .send(new ApiResponse(400, null, "Invalid credentials."));
     }
 
-    const at = created.generateAccessToken();
-    const rt = created.generateRefreshToken();
+    const at = exists.generateAccessToken();
+    const rt = exists.generateRefreshToken();
 
     res.cookie("at", at);
     res.cookie("rt", rt);
